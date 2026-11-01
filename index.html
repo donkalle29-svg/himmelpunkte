@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Himmelpunkte</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="shell">
+<header><div class="logo">☁</div><div><h1>Himmelpunkte</h1><p>Wenig Punkte. Große Freude.</p></div></header>
+<section id="home" class="panel">
+<h2>Willkommen!</h2><label>Dein Name<input id="name" maxlength="18" placeholder="Name eingeben"></label>
+<div class="actions"><button id="create">Raum erstellen</button></div>
+<div class="join"><label>Raumcode<input id="roomCode" maxlength="6" placeholder="ABC123"></label><button id="join">Beitreten</button></div>
+<p id="error" class="error"></p>
+</section>
+<section id="lobby" class="panel hidden"><div class="roomline"><h2>Spielraum <strong id="code"></strong></h2><button class="secondary" id="copy">Code kopieren</button></div><p>Teile den Code mit deinen Freunden.</p><div id="lobbyPlayers" class="playerlist"></div><button id="start">Spiel starten</button></section>
+<section id="game" class="hidden">
+<div class="gamebar"><div>Raum <b id="gameCode"></b></div><div id="turnInfo"></div><div id="deckInfo"></div></div>
+<div id="opponents" class="opponents"></div>
+<div class="table">
+<div class="piles"><div><small>Nachziehstapel</small><button class="card deck" id="drawDeck">☁<span>ziehen</span></button></div><div><small>Ablagestapel</small><button class="card discard" id="drawDiscard">?</button></div><div id="drawnBox" class="hidden"><small>Gezogene Karte</small><div class="card drawn" id="drawnCard"></div><button class="secondary" id="discardDrawn">Ablegen</button></div></div>
+<h3>Deine Karten</h3><div id="myGrid" class="grid"></div><p id="instruction" class="hint"></p>
+</div>
+</section>
+<section id="results" class="panel hidden"><h2 id="resultTitle">Rundenwertung</h2><div id="resultList"></div><button id="nextRound">Nächste Runde</button></section>
+</main><script src="/socket.io/socket.io.js"></script><script src="app.js"></script></body></html>
